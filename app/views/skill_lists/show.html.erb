@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @skill_list.title %>
+</p>
+
+<p>
+  <strong>Experience length:</strong>
+  <%= @skill_list.experience_length %>
+</p>
+
+<p>
+  <strong>User rating:</strong>
+  <%= @skill_list.user_rating %>
+</p>
+
+<p>
+  <strong>Admin rating:</strong>
+  <%= @skill_list.admin_rating %>
+</p>
+
+<p>
+  <strong>User notes:</strong>
+  <%= @skill_list.user_notes %>
+</p>
+
+<p>
+  <strong>Admin notes:</strong>
+  <%= @skill_list.admin_notes %>
+</p>
+
+<p>
+  <strong>Date rated:</strong>
+  <%= @skill_list.date_rated %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @skill_list.link %>
+</p>
+
+<%= link_to 'Edit', edit_skill_list_path(@skill_list) %> |
+<%= link_to 'Back', skill_lists_path %>

@@ -1,0 +1,57 @@
+<%= form_with(model: skill_list, local: true) do |form| %>
+  <% if skill_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skill_list.errors.count, "error") %> prohibited this skill_list from being saved:</h2>
+
+      <ul>
+      <% skill_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :skill_list_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experience_length %>
+    <%= form.text_area :experience_length, id: :skill_list_experience_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_rating %>
+    <%= form.number_field :user_rating, id: :skill_list_user_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin_rating %>
+    <%= form.number_field :admin_rating, id: :skill_list_admin_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_notes %>
+    <%= form.text_area :user_notes, id: :skill_list_user_notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin_notes %>
+    <%= form.text_area :admin_notes, id: :skill_list_admin_notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_rated %>
+    <%= form.date_select :date_rated, id: :skill_list_date_rated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_area :link, id: :skill_list_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
