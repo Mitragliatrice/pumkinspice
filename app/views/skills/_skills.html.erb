@@ -1,0 +1,8 @@
+<%= div_for skills do %>
+	<h2><%= link_to skills.name, skill %></h2>
+	<ul>
+		<% skills.users.each do |users| %>
+			<li><%= link_to user.name %></li>
+		<% end %>
+	</ul>
+<% end %>
