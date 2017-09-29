@@ -54,4 +54,10 @@ gem 'elasticsearch', '~> 5.0', '>= 5.0.4'
 
 gem 'devise', '~> 4.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+<<<<<<< HEAD
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+=======
+gem 'cocoon', '~> 1.2', '>= 1.2.10'
+gem 'petergate', '~> 1.7', '>= 1.7.5'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+>>>>>>> 7706db4730d7070b3792f8ce42040e1aaa907e9e
