@@ -8,6 +8,26 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :github %><br />
+    <%= f.text_field :github, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.text_field :avatar, autofocus: true %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
