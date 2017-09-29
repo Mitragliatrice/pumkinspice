@@ -1,5 +1,6 @@
 class SkillListsController < ApplicationController
   before_action :set_skill_list, only: [:show, :edit, :update, :destroy]
+  access user: :all, admin: :all
 
   # GET /skill_lists
   # GET /skill_lists.json
@@ -71,4 +72,11 @@ class SkillListsController < ApplicationController
     def skill_list_params
       params.require(:skill_list).permit(:title, :experience_length, :user_rating, :admin_rating, :user_notes, :admin_notes, :date_rated, :link)
     end
+
+
+
+    def scoped_skill_list
+      admin? ? @skills = SkillList.all : @skills = SkillList.where(user_id: current_user.id).find(params[:id])
+    end
+
 end
