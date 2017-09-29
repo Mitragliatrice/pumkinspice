@@ -14,7 +14,7 @@ class SkillListsController < ApplicationController
 
   # GET /skill_lists/new
   def new
-    @skill_list = SkillList.new
+    @skill_list = current_user.skill_lists.new
   end
 
   # GET /skill_lists/1/edit
@@ -25,7 +25,7 @@ class SkillListsController < ApplicationController
   # POST /skill_lists.json
   def create
     @skill_list = SkillList.new(skill_list_params)
-
+    @skill_list.user_id = current_user.id
     respond_to do |format|
       if @skill_list.save
         format.html { redirect_to @skill_list, notice: 'Skill list was successfully created.' }
