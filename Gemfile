@@ -54,5 +54,5 @@ gem 'elasticsearch', '~> 5.0', '>= 5.0.4'
 
 gem 'devise', '~> 4.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'cocoon', '~> 1.2', '>= 1.2.10'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-
