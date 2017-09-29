@@ -5,12 +5,26 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :skill_lists
+         has_many :users
 
-  # settings index: { number_of_shards: 1 } do
-  # 	mapping dynamic: false do
-  # 		indexes :title, analyzer: 'english'
-  # 		indexes :body, analyzer: 'english'
-  # 	end
-  # end
+  # searchkick mappings {
+  # 	user: {
+  # 		properties: {
+  # 			name: {type: "string", norms: {enabled: false}}
+  # 		}
+  # 	}
+  # }
 
+  
+	def search_data
+		{
+			user_id: index_skill_lists_on_user_id,
+			title: index_skill_lists_on_title
+		}
+	end
+
+  def search_data
+  	Attributes.merge(
+  			User_names: users.map(&:user_name))
+ 	end
 end
