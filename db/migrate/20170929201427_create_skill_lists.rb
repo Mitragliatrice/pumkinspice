@@ -1,6 +1,6 @@
-class CreateSkillTables < ActiveRecord::Migration[5.1]
+class CreateSkillLists < ActiveRecord::Migration[5.1]
   def change
-    create_table :skill_tables do |t|
+    create_table :skill_lists do |t|
       t.string :title
       t.text :experience_length
       t.integer :user_rating

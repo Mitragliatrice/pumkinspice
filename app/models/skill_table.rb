@@ -1,2 +1,3 @@
 class SkillTable < ApplicationRecord
+	
 end
