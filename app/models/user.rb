@@ -1,20 +1,24 @@
 class User < ApplicationRecord
+  ############################################################################################
+  ## PeterGate Roles                                                                        ##
+  ## The :user role is added by default and shouldn't be included in this list.             ##
+  ## The :root_admin can access any page regardless of access settings. Use with caution!   ##
+  ## The multiple option can be set to true if you need users to have multiple roles.       ##
+  petergate(roles: [:admin], multiple: false)                                      ##
+  ############################################################################################
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-<<<<<<< HEAD
-         has_many :skill_lists
+  has_many :skill_lists
 
-=======
-  settings index: { number_of_shards: 1 } do
-  	mapping dynamic: false do
-  		indexes :title, analyzer: 'english'
-  		indexes :body, analyzer: 'english'
-  	end
-  end
-
-  
->>>>>>> 56a3593ed239cf5e485ae72df6c41f76667c1faa
+  # settings index: { number_of_shards: 1 } do
+  # 	mapping dynamic: false do
+  # 		indexes :title, analyzer: 'english'
+  # 		indexes :body, analyzer: 'english'
+  # 	end
+  # end
 end
