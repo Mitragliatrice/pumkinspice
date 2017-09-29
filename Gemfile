@@ -51,4 +51,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'elasticsearch', '~> 5.0', '>= 5.0.4'
+gem 'searchkick', '~> 2.3', '>= 2.3.2'
 
