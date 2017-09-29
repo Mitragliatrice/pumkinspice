@@ -13,13 +13,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-<<<<<<< HEAD
+
          has_many :skill_lists
          has_many :users
-=======
 
   has_many :skill_lists
->>>>>>> 1e0de3bc9f80961dc1ef72a96210add0eaa2f3fc
+
 
   # searchkick mappings {
   # 	user: {
