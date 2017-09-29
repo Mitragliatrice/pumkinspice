@@ -1,5 +1,6 @@
 class SkillListsController < ApplicationController
   before_action :set_skill_list, only: [:show, :edit, :update, :destroy]
+  access user: :all, admin: :all
 
   # GET /skill_lists
   # GET /skill_lists.json
@@ -14,7 +15,7 @@ class SkillListsController < ApplicationController
 
   # GET /skill_lists/new
   def new
-    @skill_list = SkillList.new
+    @skill_list = current_user.skill_lists.new
   end
 
   # GET /skill_lists/1/edit
@@ -25,7 +26,7 @@ class SkillListsController < ApplicationController
   # POST /skill_lists.json
   def create
     @skill_list = SkillList.new(skill_list_params)
-
+    @skill_list.user_id = current_user.id
     respond_to do |format|
       if @skill_list.save
         format.html { redirect_to @skill_list, notice: 'Skill list was successfully created.' }
@@ -71,4 +72,11 @@ class SkillListsController < ApplicationController
     def skill_list_params
       params.require(:skill_list).permit(:title, :experience_length, :user_rating, :admin_rating, :user_notes, :admin_notes, :date_rated, :link)
     end
+
+
+
+    def scoped_skill_list
+      admin? ? @skills = SkillList.all : @skills = SkillList.where(user_id: current_user.id).find(params[:id])
+    end
+
 end

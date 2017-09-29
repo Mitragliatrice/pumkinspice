@@ -1,1 +1,6 @@
-<%= @user.inspect %>
+<p><%= @user.name %></p>
+<% @user_skills.each do |skill| %>
+<p><%= skill.title %></p>
+<p><%= skill.user_rating %></p>
+<p><%= skill.user_notes %></p>
+<% end %>
