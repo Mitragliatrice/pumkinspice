@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
   resources :skill_lists
-  get 'profile/:id', to: 'users#show'
 
-  get 'users/index'
+  
+
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-
+  get 'show/:id', to: 'users#show'
+  get 'users/index'
 
 
   root to: 'trash#home'
